@@ -1,26 +1,250 @@
 @import "tailwindcss";
 
+@theme {
+  --font-royal: var(--font-cinzel), serif;
+  --font-script: var(--font-great-vibes), cursive;
+  --font-editorial: var(--font-cormorant), serif;
+  --font-sans: var(--font-montserrat), sans-serif;
+
+  --color-terracotta: #C06C4E;
+  --color-terracotta-dark: #A85338;
+  --color-terracotta-deep: #833924;
+  --color-terracotta-soft: #D9886C;
+  --color-peach-light: #FDF0EA;
+  --color-peach: #F7D6C8;
+  --color-parchment: #FAF5EE;
+  --color-parchment-light: #FDFBF7;
+  --color-espresso: #382A24;
+  --color-bronze: #4A3B32;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C378;
+  --color-gold-dark: #B38F24;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-parchment: #FAF5EE;
+  --bg-parchment-light: #FDFBF7;
+  --text-espresso: #382A24;
+  --accent-terracotta: #C06C4E;
+  --accent-gold: #D4AF37;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom Typography helpers */
+.font-royal {
+  font-family: var(--font-cinzel), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.font-script {
+  font-family: var(--font-great-vibes), cursive;
+}
+
+.font-editorial {
+  font-family: var(--font-cormorant), serif;
+}
+
+.font-sans-clean {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Golden Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.gold-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #C06C4E 0%,
+    #D4AF37 25%,
+    #FFF0B8 50%,
+    #D4AF37 75%,
+    #C06C4E 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
 }
+
+.gold-foil-border {
+  border-image: linear-gradient(
+    135deg,
+    #D4AF37 0%,
+    #FAF0CA 30%,
+    #B38F24 70%,
+    #E5C378 100%
+  ) 1;
+}
+
+/* Subtle paper texture using SVG noise pattern */
+.parchment-texture {
+  background-color: #FAF5EE;
+  background-image: 
+    radial-gradient(#C06C4E10 1px, transparent 1px),
+    radial-gradient(#D4AF3708 1.5px, #FAF5EE 1.5px);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* 3D Wax Seal Realistic Shadow and Bevel */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #D47959 0%, #A85338 45%, #7A331E 85%, #561E10 100%);
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 230, 200, 0.4),
+    inset -3px -3px 6px rgba(40, 10, 5, 0.7),
+    0 8px 24px rgba(56, 42, 36, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.wax-seal-border {
+  box-shadow: 
+    inset 0 0 0 2px rgba(212, 175, 55, 0.4),
+    inset 0 0 0 4px rgba(168, 83, 56, 0.8);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF5EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C06C4E;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A85338;
+}
+
+/* Smooth Equalizer Animation */
+@keyframes eq-bounce-1 {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+
+@keyframes eq-bounce-2 {
+  0%, 100% { height: 14px; }
+  50% { height: 6px; }
+}
+
+@keyframes eq-bounce-3 {
+  0%, 100% { height: 8px; }
+  50% { height: 20px; }
+}
+
+.animate-eq-1 {
+  animation: eq-bounce-1 0.8s ease-in-out infinite;
+}
+.animate-eq-2 {
+  animation: eq-bounce-2 0.7s ease-in-out infinite;
+}
+.animate-eq-3 {
+  animation: eq-bounce-3 0.9s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+/* Shimmer Border */
+@keyframes border-shimmer {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.4; }
+}
+
+.animate-border-glow {
+  animation: border-shimmer 3s ease-in-out infinite;
+}
+
+/* Perspective utilities for 3D envelope */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* High Contrast Couple Script Typography with Subtle Gold Emboss */
+.couple-script-text {
+  color: #8A2814;
+  text-shadow: 0 1px 1px rgba(212, 175, 55, 0.5), 0 2px 8px rgba(138, 40, 20, 0.2);
+}
+
+/* ── Drifting Petals (8 petals, natural sway) ─────────────────────────────── */
+@keyframes petal-drift {
+  0%   { transform: translateY(-40px) translateX(0px)   rotate(0deg)   scale(0.8); opacity: 0; }
+  8%   { opacity: 0.85; }
+  50%  { transform: translateY(50vh)  translateX(28px)  rotate(200deg) scale(1.0); }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(108vh) translateX(-12px) rotate(400deg) scale(1.1); opacity: 0; }
+}
+@keyframes petal-drift-b {
+  0%   { transform: translateY(-40px) translateX(0px)  rotate(0deg)   scale(0.85); opacity: 0; }
+  10%  { opacity: 0.8; }
+  45%  { transform: translateY(45vh)  translateX(-22px) rotate(170deg) scale(0.95); }
+  88%  { opacity: 0.65; }
+  100% { transform: translateY(108vh) translateX(18px)  rotate(360deg) scale(1.05); opacity: 0; }
+}
+
+.animate-petal-1 { animation: petal-drift   11s cubic-bezier(0.25,0.46,0.45,0.94) 0s   infinite; }
+.animate-petal-2 { animation: petal-drift-b 13s cubic-bezier(0.25,0.46,0.45,0.94) 2s   infinite; }
+.animate-petal-3 { animation: petal-drift   9s  cubic-bezier(0.25,0.46,0.45,0.94) 5s   infinite; }
+.animate-petal-4 { animation: petal-drift-b 15s cubic-bezier(0.25,0.46,0.45,0.94) 7s   infinite; }
+.animate-petal-5 { animation: petal-drift   10s cubic-bezier(0.25,0.46,0.45,0.94) 1.5s infinite; }
+.animate-petal-6 { animation: petal-drift-b 12s cubic-bezier(0.25,0.46,0.45,0.94) 4s   infinite; }
+.animate-petal-7 { animation: petal-drift   14s cubic-bezier(0.25,0.46,0.45,0.94) 8.5s infinite; }
+.animate-petal-8 { animation: petal-drift-b 10s cubic-bezier(0.25,0.46,0.45,0.94) 3.5s infinite; }
+
+/* ── Canvas petal burst overlay ──────────────────────────────────────────── */
+.intro-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 65;
+}
+
+/* ── Reduced Motion: kill all intro animations, use simple fade ───────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-petal-1, .animate-petal-2, .animate-petal-3, .animate-petal-4,
+  .animate-petal-5, .animate-petal-6, .animate-petal-7, .animate-petal-8,
+  .animate-float {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
+
+/* ── Wax-seal crack flash ─────────────────────────────────────────────────── */
+@keyframes seal-crack {
+  0%   { filter: brightness(1);   }
+  30%  { filter: brightness(2.2) saturate(0.5); }
+  60%  { filter: brightness(0.5); }
+  100% { filter: brightness(1);   }
+}
+.seal-cracking { animation: seal-crack 0.35s ease-out forwards; }
+
+/* ── Cinematic vignette overlay ──────────────────────────────────────────── */
+.intro-vignette {
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(20,10,5,0.55) 100%);
+}
+
