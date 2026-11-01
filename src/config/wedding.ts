@@ -7,8 +7,10 @@ export const WEDDING_CONFIG = {
   // ── Couple ────────────────────────────────────────────────────────────────
   bride: "Neslin",
   groom: "Gaywin",
-  brideFull: "Neslin D'souza",
-  groomFull: "Gaywin Lasrado",
+  brideFull: "Neslin Priya",
+  groomFull: "Gaywin Cristan",
+  couple: "Neslin & Gaywin",
+  coupleFull: "Neslin Priya & Gaywin Cristan",
   monogram: "N & G",
   hashtag: "#NeslinWedsGaywin",
 

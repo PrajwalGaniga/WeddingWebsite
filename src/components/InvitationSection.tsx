@@ -31,6 +31,9 @@ export function InvitationSection() {
         <span className="text-[11px] font-royal uppercase tracking-[0.3em] text-[#8E2818] font-bold">
           The Nuptial Invitation
         </span>
+        <h3 className="font-royal text-base sm:text-lg font-bold tracking-[0.16em] text-[#6B2516] uppercase mt-2">
+          Neslin Priya &amp; Gaywin Cristan
+        </h3>
 
         {/* Botanical Top Branch */}
         <div className="flex justify-center my-2">
@@ -88,8 +91,8 @@ export function InvitationSection() {
               <span className="text-[10px] font-royal tracking-[0.25em] uppercase text-[#8E2818] font-bold block mb-1">
                 The Bride
               </span>
-              <h3 className="font-script text-4xl sm:text-5xl text-[#8E2818] couple-script-text leading-tight">
-                Neslin
+              <h3 className="font-script text-3xl sm:text-4xl text-[#8E2818] couple-script-text leading-tight">
+                Neslin Priya
               </h3>
             </motion.div>
 
@@ -117,8 +120,8 @@ export function InvitationSection() {
               <span className="text-[10px] font-royal tracking-[0.25em] uppercase text-[#8E2818] font-bold block mb-1">
                 The Groom
               </span>
-              <h3 className="font-script text-4xl sm:text-5xl text-[#8E2818] couple-script-text leading-tight">
-                Gaywin
+              <h3 className="font-script text-3xl sm:text-4xl text-[#8E2818] couple-script-text leading-tight">
+                Gaywin Cristan
               </h3>
               <p className="font-editorial italic font-medium text-xs sm:text-sm text-[#2C1A12] mt-1">
                 (S/o Clement Lasrado and Felcy Rodrigues)
