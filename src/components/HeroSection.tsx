@@ -164,7 +164,7 @@ export function HeroSection({ guestName }: HeroSectionProps = {}) {
               <div className="flex items-center justify-center gap-4 my-1">
                 <span className="text-[10px] font-royal font-bold tracking-[0.2em] text-[#382A24] uppercase">Monday</span>
                 <span className="text-4xl font-royal font-bold text-[#8E2818]">21</span>
-                <span className="text-[10px] font-royal font-bold tracking-[0.15em] text-[#382A24] uppercase">3:30 PM</span>
+                <span className="text-[10px] font-royal font-bold tracking-[0.15em] text-[#382A24] uppercase">3:30 P.M.</span>
               </div>
               <div className="text-[10px] font-royal font-bold tracking-[0.3em] uppercase text-[#6B2516]">
                 2026

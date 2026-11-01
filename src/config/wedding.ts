@@ -41,10 +41,10 @@ export const WEDDING_CONFIG = {
     {
       id: "roce",
       title: "Roce Ceremony",
-      date: "Saturday, 19th December, 2026",
+      day: "Saturday",
+      date: "December 19, 2026",
       time: "6:30 P.M.",
-      venue: "St. Thomas Church Hall",
-      address: "Nirkan, Bantwal Taluk, Karnataka",
+      venue: "St. Thomas Church Hall, Nirkan",
       mapsUrl:
         "https://www.google.com/maps/search/?api=1&query=St.+Thomas+Church+Hall+Nirkan",
       calendarUrl:
@@ -53,10 +53,10 @@ export const WEDDING_CONFIG = {
     {
       id: "nuptials",
       title: "Nuptial Mass",
-      date: "Monday, 21st December, 2026",
+      day: "Monday",
+      date: "December 21, 2026",
       time: "3:30 P.M.",
-      venue: "Holy Spirit Church",
-      address: "Bajal, Mangalore, Karnataka 575007",
+      venue: "Holy Spirit Church, Bajal, Mangalore",
       mapsUrl:
         "https://www.google.com/maps/search/?api=1&query=Holy+Spirit+Church+Bajal+Mangalore",
       calendarUrl:
@@ -65,10 +65,10 @@ export const WEDDING_CONFIG = {
     {
       id: "reception",
       title: "Wedding Reception",
-      date: "Monday, 21st December, 2026",
+      day: "Monday",
+      date: "December 21, 2026",
       time: "6:30 P.M.",
-      venue: "St. Sebastian Centenary Auditorium",
-      address: "Bendoor, Mangalore, Karnataka 575002",
+      venue: "St. Sebastian Centenary Auditorium, Bendoor, Mangalore",
       mapsUrl:
         "https://www.google.com/maps/search/?api=1&query=St.+Sebastian+Centenary+Auditorium+Bendoor+Mangalore",
       calendarUrl:

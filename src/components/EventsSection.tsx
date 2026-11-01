@@ -19,10 +19,10 @@ import { FloralDivider } from "./FloralFlourish";
 interface EventItem {
   id: string;
   title: string;
+  day: string;
   date: string;
   time: string;
   venue: string;
-  address: string;
   googleMapsUrl: string;
   calendarUrl: string;
   frameImage: string;
@@ -98,36 +98,36 @@ export function EventsSection() {
     {
       id: "roce",
       title: "Roce Ceremony",
-      date: "Saturday, 19th December, 2026",
+      day: "Saturday",
+      date: "December 19, 2026",
       time: "6:30 P.M.",
-      venue: "St. Thomas Church Hall",
-      address: "Nirkan, Bantwal Taluk, Karnataka",
+      venue: "St. Thomas Church Hall, Nirkan",
       googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=St.+Thomas+Church+Hall+Nirkan",
-      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Roce+Ceremony+-+Neslin+%26+Gaywin&dates=20261219T130000Z/20261219T170000Z&details=Roce+Ceremony+of+Neslin+%26+Gaywin+at+St.+Thomas+Church+Hall,+Nirkan.&location=St.+Thomas+Church+Hall,+Nirkan",
+      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Roce+Ceremony+-+Neslin+%26+Gaywin&dates=20261219T130000Z/20261219T170000Z&details=Roce+Ceremony+at+St.+Thomas+Church+Hall,+Nirkan&location=St.+Thomas+Church+Hall,+Nirkan",
       frameImage: "/assets/floral_frame_roce.jpg",
       icon: <Church className="w-5 h-5 text-[#9A3412]" />,
     },
     {
       id: "nuptials",
       title: "Nuptial Mass",
-      date: "Monday, 21st December, 2026",
+      day: "Monday",
+      date: "December 21, 2026",
       time: "3:30 P.M.",
-      venue: "Holy Spirit Church",
-      address: "Bajal, Mangalore, Karnataka 575007",
+      venue: "Holy Spirit Church, Bajal, Mangalore",
       googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Holy+Spirit+Church+Bajal+Mangalore",
-      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nuptial+Mass+-+Neslin+%26+Gaywin&dates=20261221T100000Z/20261221T123000Z&details=Solemn+Nuptial+Mass+of+Neslin+%26+Gaywin+at+Holy+Spirit+Church,+Bajal,&location=Holy+Spirit+Church,+Bajal,+Mangalore",
+      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nuptial+Mass+-+Neslin+%26+Gaywin&dates=20261221T100000Z/20261221T123000Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore&location=Holy+Spirit+Church,+Bajal,+Mangalore",
       frameImage: "/assets/floral_frame_church.jpg",
       icon: <Church className="w-5 h-5 text-[#8E2818]" />,
     },
     {
       id: "reception",
       title: "Wedding Reception",
-      date: "Monday, 21st December, 2026",
+      day: "Monday",
+      date: "December 21, 2026",
       time: "6:30 P.M.",
-      venue: "St. Sebastian Centenary Auditorium",
-      address: "Bendoor, Mangalore, Karnataka 575002",
+      venue: "St. Sebastian Centenary Auditorium, Bendoor, Mangalore",
       googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=St.+Sebastian+Centenary+Auditorium+Bendoor+Mangalore",
-      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Neslin+%26+Gaywin&dates=20261221T130000Z/20261221T170000Z&details=Wedding+Reception+celebration+of+Neslin+%26+Gaywin+at+St.+Sebastian+Centenary+Auditorium,+Bendoor.&location=St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore",
+      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Neslin+%26+Gaywin&dates=20261221T130000Z/20261221T170000Z&details=Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore&location=St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore",
       frameImage: "/assets/floral_frame_reception.jpg",
       icon: <Wine className="w-5 h-5 text-[#7A1E12]" />,
     },
@@ -215,7 +215,7 @@ export function EventsSection() {
                   >
                     <div className="flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-[#8E2818] shrink-0" />
-                      <span>{event.date}</span>
+                      <span>{event.day}, {event.date}</span>
                     </div>
                     <span className="text-[#D4AF37] hidden sm:inline">•</span>
                     <div className="flex items-center gap-1.5 font-bold text-[#8E2818]">
@@ -224,7 +224,7 @@ export function EventsSection() {
                     </div>
                   </motion.div>
 
-                  {/* Venue & Address */}
+                  {/* Venue */}
                   <motion.div variants={childFadeVariants} className="mt-3.5 text-center w-full">
                     <div className="flex items-center justify-center gap-1.5">
                       <MapPin className="w-4 h-4 text-[#8E2818] shrink-0" />
@@ -232,13 +232,10 @@ export function EventsSection() {
                         {event.venue}
                       </span>
                     </div>
-                    <span className="text-xs text-[#4A3831] font-sans font-medium block mt-0.5">
-                      {event.address}
-                    </span>
 
-                    {/* Polite, clean copy address button */}
+                    {/* Copy address button */}
                     <button
-                      onClick={() => handleCopyAddress(event.id, `${event.venue}, ${event.address}`)}
+                      onClick={() => handleCopyAddress(event.id, event.venue)}
                       className="mt-2.5 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FAF5EE]/80 hover:bg-[#FAF5EE] backdrop-blur-sm border border-[#D4AF37]/50 text-[11px] font-sans font-medium text-[#8E2818] hover:text-[#731D0F] transition-all cursor-pointer shadow-2xs"
                       title="Copy venue address"
                     >
