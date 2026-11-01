@@ -406,36 +406,72 @@ export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
                         sizes="400px"
                       />
 
+                      {/* Inside face of the card (revealed when panels unfold) */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center z-0">
+                        <p className="text-[9px] font-royal uppercase tracking-[0.3em] text-[#7A1E11] font-bold">
+                          The Wedding Of
+                        </p>
+                        <h3
+                          className="text-3xl sm:text-4xl font-script font-bold text-[#5C0F05] couple-script-text my-1 leading-tight select-none"
+                          style={{
+                            textShadow: "0 1px 1px rgba(212, 175, 55, 0.6), 0 2px 6px rgba(92, 15, 5, 0.3)",
+                            WebkitTextStroke: "0.4px #4A0802",
+                          }}
+                        >
+                          {WEDDING_CONFIG.bride} &amp; {WEDDING_CONFIG.groom}
+                        </h3>
+                        <div className="h-[1px] w-12 bg-[#D4AF37] my-1" />
+                        <p className="text-[10px] font-editorial italic text-[#2C1A12]">
+                          {WEDDING_CONFIG.date}
+                        </p>
+                      </div>
+
                       {/* Book fold panels (open like a book on Act 7) */}
                       <div className="absolute inset-0 flex" style={{ transformStyle: "preserve-3d", perspective: "800px" }}>
                         {/* Left panel */}
                         <motion.div
                           ref={leftScope}
                           initial={{ rotateY: 0 }}
-                          className="flex-1 h-full bg-gradient-to-r from-[#FAF5EE] to-[#F5EDE0] border-r border-[#D4AF37]/40 flex flex-col items-center justify-center gap-1 px-3 text-center"
+                          className="flex-1 h-full bg-gradient-to-r from-[#FCF8F2] to-[#F7EFE4] border-r border-[#D4AF37]/50 flex flex-col items-center justify-center gap-1.5 px-3 text-center"
                           style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
                         >
-                          <p className="text-[8px] font-royal uppercase tracking-[0.3em] text-[#8E2818] font-bold">You Are</p>
-                          <p className="text-[8px] font-royal uppercase tracking-[0.3em] text-[#8E2818] font-bold">Cordially Invited</p>
-                          <div className="h-[1px] w-8 bg-[#D4AF37]/50 my-0.5" />
-                          <p className="text-xl sm:text-2xl font-script text-[#8E2818] leading-tight">
-                            {WEDDING_CONFIG.bride}
+                          <p className="text-[9px] font-royal uppercase tracking-[0.25em] text-[#7A1E11] font-bold">
+                            The Wedding Of
                           </p>
+                          <h3
+                            className="text-3xl sm:text-4xl md:text-[42px] font-script font-bold text-[#5C0F05] couple-script-text leading-tight my-0.5 select-none"
+                            style={{
+                              textShadow: "0 1px 1px rgba(212, 175, 55, 0.6), 0 2px 6px rgba(92, 15, 5, 0.3)",
+                              WebkitTextStroke: "0.4px #4A0802",
+                            }}
+                          >
+                            {WEDDING_CONFIG.bride}
+                          </h3>
+                          <div className="flex items-center gap-1.5 my-0.5">
+                            <span className="h-[1px] w-6 bg-[#D4AF37]/60" />
+                            <span className="font-script text-base text-[#7A1E11] italic">&amp;</span>
+                            <span className="h-[1px] w-6 bg-[#D4AF37]/60" />
+                          </div>
                         </motion.div>
 
                         {/* Right panel */}
                         <motion.div
                           ref={rightScope}
                           initial={{ rotateY: 0 }}
-                          className="flex-1 h-full bg-gradient-to-l from-[#FAF5EE] to-[#F5EDE0] flex flex-col items-center justify-center gap-1 px-3 text-center"
+                          className="flex-1 h-full bg-gradient-to-l from-[#FCF8F2] to-[#F7EFE4] flex flex-col items-center justify-center gap-1.5 px-3 text-center"
                           style={{ transformOrigin: "right center", backfaceVisibility: "hidden" }}
                         >
-                          <div className="h-[1px] w-8 bg-[#D4AF37]/50 my-0.5" />
-                          <p className="text-xl sm:text-2xl font-script text-[#8E2818] leading-tight">
+                          <h3
+                            className="text-3xl sm:text-4xl md:text-[42px] font-script font-bold text-[#5C0F05] couple-script-text leading-tight my-0.5 select-none"
+                            style={{
+                              textShadow: "0 1px 1px rgba(212, 175, 55, 0.6), 0 2px 6px rgba(92, 15, 5, 0.3)",
+                              WebkitTextStroke: "0.4px #4A0802",
+                            }}
+                          >
                             {WEDDING_CONFIG.groom}
-                          </p>
-                          <div className="h-[1px] w-8 bg-[#D4AF37]/50 my-0.5" />
-                          <p className="text-[9px] font-royal tracking-[0.2em] text-[#382A24]">
+                          </h3>
+                          <div className="h-[1px] w-12 bg-[#D4AF37]/70 my-1" />
+                          <p className="text-[9px] sm:text-[10px] font-royal font-bold tracking-[0.22em] text-[#2C1A12] uppercase">
                             {WEDDING_CONFIG.dateShort}
                           </p>
                         </motion.div>
