@@ -13,7 +13,7 @@ This document contains the complete and exact details extracted from the wedding
   * Mother: Mrs. Florin D’souza
   * Father: Late Mark Gregory D’souza
 * **Groom's Parents:** 
-  * Father: Clement Larrado
+  * Father: Clement Lasrado
   * Mother: Felcy Rodrigues
 
 ---
@@ -53,7 +53,7 @@ This document contains the complete and exact details extracted from the wedding
 > **Neslin**  
 > ❧ With ❧  
 > **Gaywin**  
-> *(S/o Clement Larrado and Felcy Rodrigues)*
+> *(S/o Clement Lasrado and Felcy Rodrigues)*
 
 ---
 

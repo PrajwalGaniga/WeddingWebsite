@@ -26,7 +26,7 @@ const DEFAULT_WISHES: WishItem[] = [
   },
   {
     id: "wish-2",
-    name: "Clement Larrado & Family",
+    name: "Clement Lasrado & Family",
     message: "May Christ bless your sacred union. We are immensely proud and joyfully anticipate celebrating this blessed day together.",
     attendance: "attending",
     guests: 4,

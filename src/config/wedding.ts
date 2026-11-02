@@ -35,7 +35,7 @@ export const WEDDING_CONFIG = {
   invitation: {
     hostess: "Mrs. Florin D'souza",
     blessedBy: "late Mark Gregory D'souza",
-    groomParents: "Clement Larrado and Felcy Rodrigues",
+    groomParents: "Clement Lasrado and Felcy Rodrigues",
   },
 
   // ── Events ────────────────────────────────────────────────────────────────
