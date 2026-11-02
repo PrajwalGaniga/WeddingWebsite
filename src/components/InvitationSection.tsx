@@ -124,7 +124,7 @@ export function InvitationSection() {
                 Gaywin Cristan
               </h3>
               <p className="font-editorial italic font-medium text-xs sm:text-sm text-[#2C1A12] mt-1">
-                (S/o Clement Lasrado and Felcy Rodrigues)
+                (S/o Clement Larrado and Felcy Rodrigues)
               </p>
             </motion.div>
           </div>

@@ -22,10 +22,10 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:wedding-neslin-gaywin-20261221@wedding.invitation
 SUMMARY:The Wedding of Neslin & Gaywin
-DESCRIPTION:Nuptial Mass at Holy Spirit Church, Bajal, Mangalore (3:30 P.M.) followed by Wedding Reception at St. Sebastian Centenary Auditorium, Bendoor, Mangalore (6:30 P.M.).
+DESCRIPTION:Nuptial Mass at Holy Spirit Church, Bajal, Mangalore (4:30 P.M.) followed by Wedding Reception at St. Sebastian Centenary Auditorium, Bendoor, Mangalore (6:45 P.M.).
 LOCATION:Holy Spirit Church, Bajal, Mangalore & St. Sebastian Centenary Auditorium, Bendoor, Mangalore
-DTSTART:20261221T100000Z
-DTEND:20261221T163000Z
+DTSTART:20261221T110000Z
+DTEND:20261221T171500Z
 STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT24H
@@ -47,7 +47,7 @@ END:VCALENDAR`;
     setTimeout(() => setDownloaded(false), 3000);
   };
 
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Neslin+%26+Gaywin&dates=20261221T100000Z/20261221T163000Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+3:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:30+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore`;
+  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T171500Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+4:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:45+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore`;
 
   return (
     <section className="relative my-10 px-4">

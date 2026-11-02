@@ -26,7 +26,7 @@ const DEFAULT_WISHES: WishItem[] = [
   },
   {
     id: "wish-2",
-    name: "Clement Lasrado & Family",
+    name: "Clement Larrado & Family",
     message: "May Christ bless your sacred union. We are immensely proud and joyfully anticipate celebrating this blessed day together.",
     attendance: "attending",
     guests: 4,
@@ -290,9 +290,9 @@ export function RsvpSection() {
                     </label>
                     <div className="space-y-2">
                       {[
-                        { id: "roce", label: "Roce Ceremony (Dec 19, 6:30 PM)" },
-                        { id: "nuptials", label: "Nuptial Mass (Dec 21, 3:30 PM)" },
-                        { id: "reception", label: "Wedding Reception (Dec 21, 6:30 PM)" },
+                        { id: "roce", label: "Roce Ceremony (Dec 19, 6:45 PM)" },
+                        { id: "nuptials", label: "Nuptial Mass (Dec 21, 4:30 PM)" },
+                        { id: "reception", label: "Wedding Reception (Dec 21, 6:45 PM)" },
                       ].map((item) => {
                         const checked = eventsSelected.includes(item.id);
                         return (

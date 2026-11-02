@@ -22,8 +22,8 @@ export function CountdownSection() {
   });
 
   useEffect(() => {
-    // Target: December 21, 2026 at 3:30 PM IST (UTC+05:30)
-    const targetDate = new Date("2026-12-21T15:30:00+05:30").getTime();
+    // Target: December 21, 2026 at 4:30 PM IST (UTC+05:30)
+    const targetDate = new Date("2026-12-21T16:30:00+05:30").getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -106,7 +106,7 @@ export function CountdownSection() {
         </div>
 
         <p className="relative font-editorial italic text-xs sm:text-sm text-[#FAF5EE]/80 mt-6 tracking-wide">
-          Monday, 21st December 2026 • 3:30 P.M. IST
+          Monday, 21st December 2026 • 4:30 P.M. IST
         </p>
       </motion.div>
     </section>

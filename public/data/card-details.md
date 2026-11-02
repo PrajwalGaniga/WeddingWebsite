@@ -13,7 +13,7 @@ This document contains the complete and exact details extracted from the wedding
   * Mother: Mrs. Florin D’souza
   * Father: Late Mark Gregory D’souza
 * **Groom's Parents:** 
-  * Father: Clement Lasrado
+  * Father: Clement Larrado
   * Mother: Felcy Rodrigues
 
 ---
@@ -53,7 +53,7 @@ This document contains the complete and exact details extracted from the wedding
 > **Neslin**  
 > ❧ With ❧  
 > **Gaywin**  
-> *(S/o Clement Lasrado and Felcy Rodrigues)*
+> *(S/o Clement Larrado and Felcy Rodrigues)*
 
 ---
 
@@ -61,7 +61,7 @@ This document contains the complete and exact details extracted from the wedding
 
 #### 1. Roce Ceremony
 * **Date:** Saturday, 19th December, 2026
-* **Time:** 6:30 P.M.
+* **Time:** 6:45 P.M.
 * **Venue:** St. Thomas Church Hall, Nirkan
 * *(Highlighted in a dark terracotta card block on the invitation)*
 
@@ -70,12 +70,12 @@ This document contains the complete and exact details extracted from the wedding
 
 #### 3. Nuptial Mass
 * **Date:** Monday, 21st December, 2026
-* **Time:** 3:30 P.M.
+* **Time:** 4:30 P.M.
 * **Venue:** Holy Spirit Church, Bajal, Mangalore
 
 #### 4. Wedding Reception
 * **Date:** Monday, 21st December, 2026
-* **Time:** 6:30 P.M.
+* **Time:** 6:45 P.M.
 * **Venue:** St. Sebastian Centenary Auditorium, Bendoor, Mangalore
 
 ---
@@ -92,7 +92,7 @@ This document contains the complete and exact details extracted from the wedding
 ---
 
 ### Contact Numbers (RSVP / Enquiries)
-* `9741715635`
+* `9741715639`
 * `9686129315`
 
 ---
