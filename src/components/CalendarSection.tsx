@@ -1,51 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Calendar as CalendarIcon, Heart, Download, ExternalLink, Sparkles } from "lucide-react";
+import { Calendar as CalendarIcon, Heart, ExternalLink, Sparkles } from "lucide-react";
 import { CornerOrnament } from "./FloralFlourish";
 
 export function CalendarSection() {
-  const [downloaded, setDownloaded] = useState(false);
-
   // December 2026 starts on Tuesday (offset = 2 if week starts on Sunday: Sun=0, Mon=1, Tue=2)
   const daysInMonth = 31;
   const startDayOffset = 2; // Tuesday is 2
   const weekDays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-
-  const handleDownloadIcs = () => {
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Neslin and Gaywin Wedding//EN
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VEVENT
-UID:wedding-neslin-gaywin-20261221@wedding.invitation
-SUMMARY:The Wedding of Neslin & Gaywin
-DESCRIPTION:Nuptial Mass at Holy Spirit Church, Bajal, Mangalore (4:30 P.M.) followed by Wedding Reception at St. Sebastian Centenary Auditorium, Bendoor, Mangalore (6:45 P.M.).
-LOCATION:Holy Spirit Church, Bajal, Mangalore & St. Sebastian Centenary Auditorium, Bendoor, Mangalore
-DTSTART:20261221T110000Z
-DTEND:20261221T171500Z
-STATUS:CONFIRMED
-BEGIN:VALARM
-TRIGGER:-PT24H
-ACTION:DISPLAY
-DESCRIPTION:Reminder: Neslin & Gaywin Wedding Tomorrow!
-END:VALARM
-END:VEVENT
-END:VCALENDAR`;
-
-    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
-    const link = document.createElement("a");
-    link.href = window.URL.createObjectURL(blob);
-    link.setAttribute("download", "Neslin_and_Gaywin_Wedding.ics");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    setDownloaded(true);
-    setTimeout(() => setDownloaded(false), 3000);
-  };
 
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T171500Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+4:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:45+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore`;
 
@@ -159,25 +123,17 @@ END:VCALENDAR`;
           </span>
         </div>
 
-        {/* Action Buttons: Add to Calendar */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        {/* Action Button: Add to Calendar */}
+        <div className="mt-6 flex items-center justify-center">
           <a
             href={googleCalendarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C06C4E] hover:bg-[#A85338] text-[#FAF5EE] text-xs font-royal font-semibold tracking-wider uppercase shadow-md transition-colors"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#C06C4E] hover:bg-[#A85338] text-[#FAF5EE] text-xs font-royal font-semibold tracking-wider uppercase shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             <ExternalLink className="w-3.5 h-3.5" />
-            <span>Google Calendar</span>
+            <span>Add to Google Calendar</span>
           </a>
-
-          <button
-            onClick={handleDownloadIcs}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FAF5EE] hover:bg-[#FDF0EA] text-[#382A24] border border-[#D4AF37] text-xs font-royal font-semibold tracking-wider uppercase shadow-sm transition-colors cursor-pointer"
-          >
-            <Download className="w-3.5 h-3.5 text-[#C06C4E]" />
-            <span>{downloaded ? "Saved to Calendar!" : "Apple / Outlook (.ics)"}</span>
-          </button>
         </div>
       </motion.div>
     </section>

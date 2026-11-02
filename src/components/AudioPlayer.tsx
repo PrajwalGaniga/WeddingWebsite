@@ -75,7 +75,7 @@ export const AudioPlayer = forwardRef<AudioPlayerHandle, AudioPlayerProps>(
         {/* Hidden HTML5 Audio Element */}
         <audio
           ref={audioRef}
-          src="/data/background-audio.mpeg"
+          src="/data/background-audio.mp3"
           loop
           preload="auto"
           onEnded={() => {
