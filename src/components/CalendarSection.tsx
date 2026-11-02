@@ -71,7 +71,7 @@ export function CalendarSection({ config }: CalendarSectionProps = {}) {
             {Array.from({ length: daysInMonth }).map((_, i) => {
               const dayNumber = i + 1;
               const isWeddingDay = dayNumber === 21;
-              const isRoceDay = dayNumber === 19;
+              const isRoceDay = dayNumber === (activeConfig.roceDayNum || 19);
 
               if (isWeddingDay) {
                 return (
@@ -101,7 +101,7 @@ export function CalendarSection({ config }: CalendarSectionProps = {}) {
                     className="relative flex items-center justify-center p-1"
                   >
                     <div className="w-8 h-8 rounded-full bg-[#F7D6C8] border border-[#C06C4E] text-[#382A24] flex flex-col items-center justify-center shadow-xs">
-                      <span className="text-xs font-royal font-bold leading-none">19</span>
+                      <span className="text-xs font-royal font-bold leading-none">{dayNumber}</span>
                       <span className="text-[7px] font-royal text-[#A85338] font-bold">ROCE</span>
                     </div>
                   </div>

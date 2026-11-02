@@ -91,6 +91,7 @@ export const GROOM_WEDDING_CONFIG: WeddingConfig = {
   ],
 
   // ── Calendar Highlight ────────────────────────────────────────────────────
+  roceDayNum: 18,
   calendarRoceNote: "(Roce Ceremony on Friday, December 18)",
   googleCalendarUrl:
     "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Gaywin+%26+Neslin&dates=20261221T110000Z/20261221T171500Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+4:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:45+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore",
@@ -98,7 +99,7 @@ export const GROOM_WEDDING_CONFIG: WeddingConfig = {
   // ── Contacts ──────────────────────────────────────────────────────────────
   contacts: [
     { label: "Wedding Coordination", phone: "+91 8296940803", clean: "918296940803" },
-    { label: "Family RSVP & Enquiries", phone: "+91 9731533116", clean: "919731533116" },
+    { label: "Family RSVP & Enquiries", phone: "+91 97315 35116", clean: "919731535116" },
   ],
 
   // ── Closing Blessings ─────────────────────────────────────────────────────

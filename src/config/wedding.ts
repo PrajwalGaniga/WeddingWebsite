@@ -91,6 +91,7 @@ export const BRIDE_WEDDING_CONFIG: WeddingConfig = {
   ],
 
   // ── Calendar Highlight ────────────────────────────────────────────────────
+  roceDayNum: 19,
   calendarRoceNote: "(Roce Ceremony on Saturday, December 19)",
   googleCalendarUrl:
     "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T171500Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+4:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:45+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore",

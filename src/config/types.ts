@@ -65,6 +65,7 @@ export interface WeddingConfig {
   events: WeddingEvent[];
 
   // Calendar Highlight
+  roceDayNum: number;
   calendarRoceNote: string;
   googleCalendarUrl: string;
 
