@@ -1,9 +1,8 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// WEDDING CONFIG — Single source of truth for all wedding details.
-// Edit this file to update names, dates, venues, links, and contacts.
-// ─────────────────────────────────────────────────────────────────────────────
+import { WeddingConfig } from "./types";
 
-export const WEDDING_CONFIG = {
+export const BRIDE_WEDDING_CONFIG: WeddingConfig = {
+  side: "bride",
+
   // ── Couple ────────────────────────────────────────────────────────────────
   bride: "Neslin",
   groom: "Gaywin",
@@ -11,6 +10,9 @@ export const WEDDING_CONFIG = {
   groomFull: "Gaywin Cristan",
   couple: "Neslin & Gaywin",
   coupleFull: "Neslin Priya & Gaywin Cristan",
+  firstFlapName: "Neslin",
+  secondFlapName: "Gaywin",
+  firstFlapDate: "21 Dec 2026",
   monogram: "N & G",
   hashtag: "#NeslinWedsGaywin",
 
@@ -33,9 +35,13 @@ export const WEDDING_CONFIG = {
 
   // ── Invitation Text ───────────────────────────────────────────────────────
   invitation: {
-    hostess: "Mrs. Florin D'souza",
-    blessedBy: "late Mark Gregory D'souza",
-    groomParents: "Clement Lasrado and Felcy Rodrigues",
+    hostessText: "I, Mrs. Florin D’souza and with the blessings of my husband late Mark Gregory D’souza",
+    inviteText: "cordially invite you and your family to witness and bless the nuptials of my daughter",
+    primaryRole: "bride",
+    primaryName: "Neslin Priya",
+    secondaryRole: "groom",
+    secondaryName: "Gaywin Cristan",
+    secondarySubtext: "(S/o Clement Lasrado and Felcy Rodrigues)",
   },
 
   // ── Events ────────────────────────────────────────────────────────────────
@@ -51,6 +57,8 @@ export const WEDDING_CONFIG = {
         "https://www.google.com/maps/search/?api=1&query=St.+Thomas+Church+Hall+Nirkan",
       calendarUrl:
         "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Roce+Ceremony+-+Neslin+%26+Gaywin&dates=20261219T131500Z/20261219T171500Z&location=St.+Thomas+Church+Hall,+Nirkan",
+      frameImage: "/assets/floral_frame_roce.jpg",
+      iconType: "church",
     },
     {
       id: "nuptials",
@@ -63,6 +71,8 @@ export const WEDDING_CONFIG = {
         "https://www.google.com/maps/search/?api=1&query=Holy+Spirit+Church+Bajal+Mangalore",
       calendarUrl:
         "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nuptial+Mass+-+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T130000Z&location=Holy+Spirit+Church,+Bajal,+Mangalore",
+      frameImage: "/assets/floral_frame_church.jpg",
+      iconType: "church",
     },
     {
       id: "reception",
@@ -75,8 +85,15 @@ export const WEDDING_CONFIG = {
         "https://www.google.com/maps/search/?api=1&query=St.+Sebastian+Centenary+Auditorium+Bendoor+Mangalore",
       calendarUrl:
         "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Neslin+%26+Gaywin&dates=20261221T131500Z/20261221T171500Z&location=St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore",
+      frameImage: "/assets/floral_frame_reception.jpg",
+      iconType: "wine",
     },
   ],
+
+  // ── Calendar Highlight ────────────────────────────────────────────────────
+  calendarRoceNote: "(Roce Ceremony on Saturday, December 19)",
+  googleCalendarUrl:
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T171500Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+4:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:45+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore",
 
   // ── Contacts ──────────────────────────────────────────────────────────────
   contacts: [
@@ -87,4 +104,6 @@ export const WEDDING_CONFIG = {
   // ── Closing Blessings ─────────────────────────────────────────────────────
   closingBlessing: "Your presence and blessings will be our treasured gift",
   bestWishesFrom: "Preetham Manil & Marsiya Preema",
-} as const;
+};
+
+export const WEDDING_CONFIG = BRIDE_WEDDING_CONFIG;

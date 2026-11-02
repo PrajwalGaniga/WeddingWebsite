@@ -4,14 +4,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Calendar as CalendarIcon, Heart, ExternalLink, Sparkles } from "lucide-react";
 import { CornerOrnament } from "./FloralFlourish";
+import { WEDDING_CONFIG } from "@/config/wedding";
+import { WeddingConfig } from "@/config/types";
 
-export function CalendarSection() {
+interface CalendarSectionProps {
+  config?: WeddingConfig;
+}
+
+export function CalendarSection({ config }: CalendarSectionProps = {}) {
+  const activeConfig = config || WEDDING_CONFIG;
+
   // December 2026 starts on Tuesday (offset = 2 if week starts on Sunday: Sun=0, Mon=1, Tue=2)
   const daysInMonth = 31;
   const startDayOffset = 2; // Tuesday is 2
   const weekDays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
-  const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T171500Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore+at+4:30+P.M.+followed+by+Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore+at+6:45+P.M.&location=Holy+Spirit+Church,+Bajal,+Mangalore`;
+  const googleCalendarUrl = activeConfig.googleCalendarUrl;
 
   return (
     <section className="relative my-10 px-4">
@@ -119,7 +127,7 @@ export function CalendarSection() {
             <span>Monday, December 21 • Wedding Ceremony & Reception</span>
           </div>
           <span className="text-[11px] font-editorial italic text-[#4A3B32]">
-            (Roce Ceremony on Saturday, December 19)
+            {activeConfig.calendarRoceNote}
           </span>
         </div>
 

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FloralDivider } from "./FloralFlourish";
 import { Heart } from "lucide-react";
+import { WEDDING_CONFIG } from "@/config/wedding";
+import { WeddingConfig } from "@/config/types";
 
 // Stagger container for letter-by-letter reveal
 const staggerContainer = {
@@ -48,9 +50,11 @@ function StaggerName({ text }: { text: string }) {
 
 interface HeroSectionProps {
   guestName?: string | null;
+  config?: WeddingConfig;
 }
 
-export function HeroSection({ guestName }: HeroSectionProps = {}) {
+export function HeroSection({ guestName, config }: HeroSectionProps = {}) {
+  const activeConfig = config || WEDDING_CONFIG;
   return (
     <>
       {/* ─── SCREEN 1: Name Card – Full viewport ─── */}
@@ -119,7 +123,7 @@ export function HeroSection({ guestName }: HeroSectionProps = {}) {
 
             {/* Names with staggered letter reveal */}
             <div className="space-y-0.5 my-0.5">
-              <StaggerName text="Neslin" />
+              <StaggerName text={activeConfig.firstFlapName} />
 
               {/* Ampersand with hearts */}
               <motion.div
@@ -136,7 +140,7 @@ export function HeroSection({ guestName }: HeroSectionProps = {}) {
                 <span className="h-[1px] w-5 bg-[#A85338]/40" />
               </motion.div>
 
-              <StaggerName text="Gaywin" />
+              <StaggerName text={activeConfig.secondFlapName} />
             </div>
 
             {/* Invite sub-line - carefully sized so it never touches the frame design */}
@@ -159,15 +163,15 @@ export function HeroSection({ guestName }: HeroSectionProps = {}) {
               className="w-full max-w-[240px] py-2.5 border-y border-[#D4AF37]/60 text-center my-2"
             >
               <div className="text-[10px] font-royal font-bold tracking-[0.3em] uppercase text-[#6B2516]">
-                December
+                {activeConfig.month}
               </div>
               <div className="flex items-center justify-center gap-4 my-1">
-                <span className="text-[10px] font-royal font-bold tracking-[0.2em] text-[#382A24] uppercase">Monday</span>
-                <span className="text-4xl font-royal font-bold text-[#8E2818]">21</span>
-                <span className="text-[10px] font-royal font-bold tracking-[0.15em] text-[#382A24] uppercase">4:30 P.M.</span>
+                <span className="text-[10px] font-royal font-bold tracking-[0.2em] text-[#382A24] uppercase">{activeConfig.dayName}</span>
+                <span className="text-4xl font-royal font-bold text-[#8E2818]">{activeConfig.dateNum}</span>
+                <span className="text-[10px] font-royal font-bold tracking-[0.15em] text-[#382A24] uppercase">{activeConfig.weddingTime}</span>
               </div>
               <div className="text-[10px] font-royal font-bold tracking-[0.3em] uppercase text-[#6B2516]">
-                2026
+                {activeConfig.year}
               </div>
             </motion.div>
 
@@ -190,7 +194,7 @@ export function HeroSection({ guestName }: HeroSectionProps = {}) {
               transition={{ delay: 0.9, duration: 0.6 }}
               className="font-script text-2xl text-[#8E2818] couple-script-text"
             >
-              #NeslinWedsGaywin
+              {activeConfig.hashtag}
             </motion.div>
           </div>
         </motion.div>

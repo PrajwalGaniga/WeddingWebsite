@@ -15,6 +15,8 @@ import {
   Check,
 } from "lucide-react";
 import { FloralDivider } from "./FloralFlourish";
+import { WEDDING_CONFIG } from "@/config/wedding";
+import { WeddingConfig } from "@/config/types";
 
 interface EventItem {
   id: string;
@@ -91,47 +93,42 @@ const childFadeVariants = {
   },
 };
 
-export function EventsSection() {
+interface EventsSectionProps {
+  config?: WeddingConfig;
+}
+
+export function EventsSection({ config }: EventsSectionProps = {}) {
+  const activeConfig = config || WEDDING_CONFIG;
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  const events: EventItem[] = [
-    {
-      id: "roce",
-      title: "Roce Ceremony",
-      day: "Saturday",
-      date: "December 19, 2026",
-      time: "6:45 P.M.",
-      venue: "St. Thomas Church Hall, Nirkan",
-      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=St.+Thomas+Church+Hall+Nirkan",
-      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Roce+Ceremony+-+Neslin+%26+Gaywin&dates=20261219T131500Z/20261219T171500Z&details=Roce+Ceremony+at+St.+Thomas+Church+Hall,+Nirkan&location=St.+Thomas+Church+Hall,+Nirkan",
-      frameImage: "/assets/floral_frame_roce.jpg",
-      icon: <Church className="w-5 h-5 text-[#9A3412]" />,
-    },
-    {
-      id: "nuptials",
-      title: "Nuptial Mass",
-      day: "Monday",
-      date: "December 21, 2026",
-      time: "4:30 P.M.",
-      venue: "Holy Spirit Church, Bajal, Mangalore",
-      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Holy+Spirit+Church+Bajal+Mangalore",
-      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nuptial+Mass+-+Neslin+%26+Gaywin&dates=20261221T110000Z/20261221T130000Z&details=Nuptial+Mass+at+Holy+Spirit+Church,+Bajal,+Mangalore&location=Holy+Spirit+Church,+Bajal,+Mangalore",
-      frameImage: "/assets/floral_frame_church.jpg",
-      icon: <Church className="w-5 h-5 text-[#8E2818]" />,
-    },
-    {
-      id: "reception",
-      title: "Wedding Reception",
-      day: "Monday",
-      date: "December 21, 2026",
-      time: "6:45 P.M.",
-      venue: "St. Sebastian Centenary Auditorium, Bendoor, Mangalore",
-      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=St.+Sebastian+Centenary+Auditorium+Bendoor+Mangalore",
-      calendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Neslin+%26+Gaywin&dates=20261221T131500Z/20261221T171500Z&details=Wedding+Reception+at+St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore&location=St.+Sebastian+Centenary+Auditorium,+Bendoor,+Mangalore",
-      frameImage: "/assets/floral_frame_reception.jpg",
-      icon: <Wine className="w-5 h-5 text-[#7A1E12]" />,
-    },
-  ];
+  const getEventIcon = (id: string, iconType?: string) => {
+    if (id === "reception" || iconType === "wine") {
+      return <Wine className="w-5 h-5 text-[#7A1E12]" />;
+    }
+    if (id === "roce") {
+      return <Church className="w-5 h-5 text-[#9A3412]" />;
+    }
+    return <Church className="w-5 h-5 text-[#8E2818]" />;
+  };
+
+  const events: EventItem[] = activeConfig.events.map((e) => ({
+    id: e.id,
+    title: e.title,
+    day: e.day,
+    date: e.date,
+    time: e.time,
+    venue: e.venue,
+    googleMapsUrl: e.mapsUrl,
+    calendarUrl: e.calendarUrl,
+    frameImage:
+      e.frameImage ||
+      (e.id === "roce"
+        ? "/assets/floral_frame_roce.jpg"
+        : e.id === "nuptials"
+        ? "/assets/floral_frame_church.jpg"
+        : "/assets/floral_frame_reception.jpg"),
+    icon: getEventIcon(e.id, e.iconType),
+  }));
 
   const handleCopyAddress = (id: string, text: string) => {
     navigator.clipboard.writeText(text);

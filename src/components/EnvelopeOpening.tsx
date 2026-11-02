@@ -9,9 +9,11 @@ import React, {
 import Image from "next/image";
 import { motion, AnimatePresence, useAnimate, useReducedMotion } from "framer-motion";
 import { WEDDING_CONFIG } from "@/config/wedding";
+import { WeddingConfig } from "@/config/types";
 
 interface EnvelopeOpeningProps {
   onOpen: () => void;
+  config?: WeddingConfig;
 }
 
 // ── Canvas petal burst ─────────────────────────────────────────────────────
@@ -119,7 +121,8 @@ function WaxSealEmblem() {
 }
 
 // ── Main EnvelopeOpening Component ─────────────────────────────────────────
-export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
+export function EnvelopeOpening({ onOpen, config }: EnvelopeOpeningProps) {
+  const activeConfig = config || WEDDING_CONFIG;
   const shouldReduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<"idle" | "animating" | "done">("idle");
   const [sealCracking, setSealCracking] = useState(false);
@@ -380,11 +383,11 @@ export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
                         The Wedding Of
                       </p>
                       <p className="text-2xl sm:text-3xl font-script text-[#8E2818] leading-tight">
-                        {WEDDING_CONFIG.bride} &amp; {WEDDING_CONFIG.groom}
+                        {activeConfig.couple}
                       </p>
                       <div className="h-[1px] w-12 bg-[#D4AF37]/55 my-1" />
                       <p className="text-[10px] font-editorial italic text-[#382A24]">
-                        {WEDDING_CONFIG.dateShort} • {WEDDING_CONFIG.location.split(",")[0]}
+                        {activeConfig.dateShort} • {activeConfig.location.split(",")[0]}
                       </p>
                     </div>
                   </div>
@@ -418,11 +421,11 @@ export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
                             WebkitTextStroke: "0.4px #4A0802",
                           }}
                         >
-                          {WEDDING_CONFIG.bride} &amp; {WEDDING_CONFIG.groom}
+                          {activeConfig.couple}
                         </h3>
                         <div className="h-[1px] w-12 bg-[#D4AF37] my-1" />
                         <p className="text-[10px] font-editorial italic text-[#2C1A12]">
-                          {WEDDING_CONFIG.date}
+                          {activeConfig.date}
                         </p>
                       </div>
 
@@ -445,7 +448,7 @@ export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
                               WebkitTextStroke: "0.4px #4A0802",
                             }}
                           >
-                            {WEDDING_CONFIG.bride}
+                            {activeConfig.firstFlapName}
                           </h3>
                           <div className="flex items-center gap-1.5 my-0.5">
                             <span className="h-[1px] w-6 bg-[#D4AF37]/60" />
@@ -468,11 +471,11 @@ export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
                               WebkitTextStroke: "0.4px #4A0802",
                             }}
                           >
-                            {WEDDING_CONFIG.groom}
+                            {activeConfig.secondFlapName}
                           </h3>
                           <div className="h-[1px] w-12 bg-[#D4AF37]/70 my-1" />
                           <p className="text-[9px] sm:text-[10px] font-royal font-bold tracking-[0.22em] text-[#2C1A12] uppercase">
-                            {WEDDING_CONFIG.dateShort}
+                            {activeConfig.firstFlapDate}
                           </p>
                         </motion.div>
                       </div>
@@ -565,7 +568,7 @@ export function EnvelopeOpening({ onOpen }: EnvelopeOpeningProps) {
                       <div className="flex flex-col items-center justify-center">
                         <WaxSealEmblem />
                         <span className="text-[10px] sm:text-[11px] font-royal font-bold tracking-[0.2em] text-[#5E430B] mt-0.5">
-                          {WEDDING_CONFIG.monogram}
+                          {activeConfig.monogram}
                         </span>
                       </div>
 

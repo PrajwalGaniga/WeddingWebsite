@@ -3,24 +3,25 @@
 import React from "react";
 import { Phone, MessageCircle, ArrowUp, Heart } from "lucide-react";
 import { FloralDivider, CornerOrnament } from "./FloralFlourish";
+import { WEDDING_CONFIG } from "@/config/wedding";
+import { WeddingConfig } from "@/config/types";
 
-export function FooterSection() {
+interface FooterSectionProps {
+  config?: WeddingConfig;
+}
+
+export function FooterSection({ config }: FooterSectionProps = {}) {
+  const activeConfig = config || WEDDING_CONFIG;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const contacts = [
-    {
-      name: "Wedding Coordination",
-      phone: "+91 9741715635",
-      cleanPhone: "+919741715635",
-    },
-    {
-      name: "Family RSVP & Enquiries",
-      phone: "+91 9686129315",
-      cleanPhone: "+919686129315",
-    },
-  ];
+  const contacts = activeConfig.contacts.map((c) => ({
+    name: c.label,
+    phone: c.phone,
+    cleanPhone: c.clean,
+  }));
 
   return (
     <footer className="relative pt-6 pb-24 px-4 text-center">
@@ -44,7 +45,7 @@ export function FooterSection() {
             With Love & Affection
           </span>
           <p className="font-script text-2xl text-[#C06C4E]">
-            Best wishes from Preetham Manil & Marsiya Preema
+            Best wishes from {activeConfig.bestWishesFrom}
           </p>
         </div>
 

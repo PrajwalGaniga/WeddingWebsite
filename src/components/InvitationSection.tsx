@@ -3,8 +3,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CornerOrnament, FloralDivider, BotanicalBranch } from "./FloralFlourish";
+import { WEDDING_CONFIG } from "@/config/wedding";
+import { WeddingConfig } from "@/config/types";
 
-export function InvitationSection() {
+interface InvitationSectionProps {
+  config?: WeddingConfig;
+}
+
+export function InvitationSection({ config }: InvitationSectionProps = {}) {
+  const activeConfig = config || WEDDING_CONFIG;
+  const isGroomSide = activeConfig.side === "groom";
   return (
     <section className="relative my-10 px-4">
       <motion.div
@@ -23,7 +31,7 @@ export function InvitationSection() {
         <div className="flex justify-center mb-4">
           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#C06C4E] to-[#8E3E26] border border-[#D4AF37] flex items-center justify-center shadow-md">
             <span className="font-royal text-sm font-bold text-[#FAF5EE] tracking-wider">
-              N & G
+              {activeConfig.monogram}
             </span>
           </div>
         </div>
@@ -32,7 +40,7 @@ export function InvitationSection() {
           The Nuptial Invitation
         </span>
         <h3 className="font-royal text-base sm:text-lg font-bold tracking-[0.16em] text-[#6B2516] uppercase mt-2">
-          Neslin Priya &amp; Gaywin Cristan
+          {activeConfig.coupleFull}
         </h3>
 
         {/* Botanical Top Branch */}
@@ -61,11 +69,19 @@ export function InvitationSection() {
             }}
             className="font-editorial text-lg sm:text-xl text-[#2C1A12] leading-relaxed"
           >
-            I, <span className="font-bold text-[#8E2818]">Mrs. Florin D’souza</span>
-            <br />
-            and with the blessings of my husband
-            <br />
-            <span className="italic font-semibold text-[#382A24]">late Mark Gregory D’souza</span>
+            {isGroomSide ? (
+              <>
+                We, <span className="font-bold text-[#8E2818]">Mr. Clement Lasrado</span> and <span className="font-bold text-[#8E2818]">Mrs. Felcy Rodrigues</span>
+              </>
+            ) : (
+              <>
+                I, <span className="font-bold text-[#8E2818]">Mrs. Florin D’souza</span>
+                <br />
+                and with the blessings of my husband
+                <br />
+                <span className="italic font-semibold text-[#382A24]">late Mark Gregory D’souza</span>
+              </>
+            )}
           </motion.p>
 
           <motion.p
@@ -75,12 +91,12 @@ export function InvitationSection() {
             }}
             className="font-editorial text-base sm:text-lg text-[#2C1A12] italic"
           >
-            cordially invite you and your family to witness and bless the nuptials of my daughter
+            {activeConfig.invitation.inviteText}
           </motion.p>
 
           {/* Couple Feature Cards */}
           <div className="py-4 space-y-4">
-            {/* Bride */}
+            {/* Primary Person */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, scale: 0.96, y: 14, filter: "blur(4px)" },
@@ -89,11 +105,16 @@ export function InvitationSection() {
               className="inline-block p-4 rounded-2xl bg-gradient-to-r from-[#FDFBF7] via-[#FDF0EA] to-[#FDFBF7] border border-[#D4AF37]/50 w-full max-w-sm shadow-sm"
             >
               <span className="text-[10px] font-royal tracking-[0.25em] uppercase text-[#8E2818] font-bold block mb-1">
-                The Bride
+                {activeConfig.invitation.primaryRole === "groom" ? "The Groom" : "The Bride"}
               </span>
               <h3 className="font-script text-3xl sm:text-4xl text-[#8E2818] couple-script-text leading-tight">
-                Neslin Priya
+                {activeConfig.invitation.primaryName}
               </h3>
+              {activeConfig.invitation.primarySubtext && (
+                <p className="font-editorial italic font-medium text-xs sm:text-sm text-[#2C1A12] mt-1">
+                  {activeConfig.invitation.primarySubtext}
+                </p>
+              )}
             </motion.div>
 
             {/* Flourish Divider */}
@@ -109,7 +130,7 @@ export function InvitationSection() {
               <span className="text-sm">❧</span>
             </motion.div>
 
-            {/* Groom */}
+            {/* Secondary Person */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, scale: 0.96, y: 14, filter: "blur(4px)" },
@@ -118,14 +139,16 @@ export function InvitationSection() {
               className="inline-block p-4 rounded-2xl bg-gradient-to-r from-[#FDFBF7] via-[#FDF0EA] to-[#FDFBF7] border border-[#D4AF37]/50 w-full max-w-sm shadow-sm"
             >
               <span className="text-[10px] font-royal tracking-[0.25em] uppercase text-[#8E2818] font-bold block mb-1">
-                The Groom
+                {activeConfig.invitation.secondaryRole === "groom" ? "The Groom" : "The Bride"}
               </span>
               <h3 className="font-script text-3xl sm:text-4xl text-[#8E2818] couple-script-text leading-tight">
-                Gaywin Cristan
+                {activeConfig.invitation.secondaryName}
               </h3>
-              <p className="font-editorial italic font-medium text-xs sm:text-sm text-[#2C1A12] mt-1">
-                (S/o Clement Lasrado and Felcy Rodrigues)
-              </p>
+              {activeConfig.invitation.secondarySubtext && (
+                <p className="font-editorial italic font-medium text-xs sm:text-sm text-[#2C1A12] mt-1">
+                  {activeConfig.invitation.secondarySubtext}
+                </p>
+              )}
             </motion.div>
           </div>
         </motion.div>
