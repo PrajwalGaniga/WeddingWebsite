@@ -80,7 +80,7 @@ export const WEDDING_CONFIG = {
 
   // ── Contacts ──────────────────────────────────────────────────────────────
   contacts: [
-    { label: "Wedding Coordination", phone: "+91 9741715639", clean: "919741715639" },
+    { label: "Wedding Coordination", phone: "+91 9741715635", clean: "919741715635" },
     { label: "Family RSVP & Enquiries", phone: "+91 9686129315", clean: "919686129315" },
   ],
 

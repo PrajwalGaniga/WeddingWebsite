@@ -12,8 +12,8 @@ export function FooterSection() {
   const contacts = [
     {
       name: "Wedding Coordination",
-      phone: "+91 9741715639",
-      cleanPhone: "+919741715639",
+      phone: "+91 9741715635",
+      cleanPhone: "+919741715635",
     },
     {
       name: "Family RSVP & Enquiries",

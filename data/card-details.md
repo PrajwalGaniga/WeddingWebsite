@@ -92,7 +92,7 @@ This document contains the complete and exact details extracted from the wedding
 ---
 
 ### Contact Numbers (RSVP / Enquiries)
-* `9741715639`
+* `9741715635`
 * `9686129315`
 
 ---
