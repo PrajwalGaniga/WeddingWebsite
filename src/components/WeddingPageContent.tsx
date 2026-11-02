@@ -90,3 +90,4 @@ export function WeddingPageContent({ config = WEDDING_CONFIG }: WeddingPageConte
     </div>
   );
 }
+

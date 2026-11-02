@@ -73,3 +73,4 @@ export interface WeddingConfig {
   closingBlessing: string;
   bestWishesFrom: string;
 }
+

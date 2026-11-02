@@ -11,3 +11,4 @@ export const metadata: Metadata = {
 export default function GaywinWeddingInvitationPage() {
   return <WeddingPageContent config={GROOM_WEDDING_CONFIG} />;
 }
+

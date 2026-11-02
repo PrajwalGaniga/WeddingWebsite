@@ -105,3 +105,4 @@ export const GROOM_WEDDING_CONFIG: WeddingConfig = {
   closingBlessing: "Your presence and blessings will be our treasured gift",
   bestWishesFrom: "Joswin and Nickshan",
 };
+
