@@ -102,7 +102,7 @@ export function FooterSection({ config }: FooterSectionProps = {}) {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF5EE]/90 border border-[#D4AF37]/50 shadow-md">
           <Heart className="w-3.5 h-3.5 fill-[#C06C4E] text-[#C06C4E]" />
           <span className="font-royal text-xs font-bold tracking-[0.25em] text-[#C06C4E] uppercase">
-            #NeslinWedsGaywin
+            {activeConfig.hashtag}
           </span>
           <Heart className="w-3.5 h-3.5 fill-[#C06C4E] text-[#C06C4E]" />
         </div>
