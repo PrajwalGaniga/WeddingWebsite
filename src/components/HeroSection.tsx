@@ -97,26 +97,42 @@ export function HeroSection({ guestName, config }: HeroSectionProps = {}) {
               </motion.div>
             )}
 
-            {/* Holy Matrimony badge */}
-            <motion.p
-              initial={{ opacity: 0, y: -8 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            {/* Holy Matrimony badge - luminous royal pill with gold sparkle animation */}
+            <motion.div
+              initial={{ opacity: 0, y: -12, scale: 0.92 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false }}
-              transition={{ delay: 0.15, duration: 0.6 }}
-              className="text-[9.5px] sm:text-[10px] font-royal font-bold tracking-[0.26em] text-[#6B2516] uppercase mb-2 flex items-center gap-1.5"
+              transition={{ delay: 0.15, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              className="relative inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FAF5EE]/95 border border-[#D4AF37]/60 shadow-[0_2px_10px_rgba(212,175,55,0.25)] backdrop-blur-xs mb-2.5"
             >
-              <span className="text-[#D4AF37]">✦</span>
-              Holy Matrimony
-              <span className="text-[#D4AF37]">✦</span>
-            </motion.p>
+              <motion.span
+                animate={{ opacity: [0.6, 1, 0.6], scale: [0.92, 1.15, 0.92] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                className="text-[#D4AF37] text-[10px] inline-block drop-shadow-[0_0_4px_rgba(212,175,55,0.7)]"
+              >
+                ✦
+              </motion.span>
+
+              <span className="text-[10px] sm:text-[11px] font-royal font-bold tracking-[0.28em] text-[#8E2818] uppercase select-none drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
+                Holy Matrimony
+              </span>
+
+              <motion.span
+                animate={{ opacity: [0.6, 1, 0.6], scale: [0.92, 1.15, 0.92] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                className="text-[#D4AF37] text-[10px] inline-block drop-shadow-[0_0_4px_rgba(212,175,55,0.7)]"
+              >
+                ✦
+              </motion.span>
+            </motion.div>
 
             {/* Together With Our Families */}
             <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: -4 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              transition={{ delay: 0.25, duration: 0.6 }}
-              className="text-[8px] sm:text-[8.5px] font-royal font-bold tracking-[0.18em] text-[#6B2516] uppercase mb-3"
+              transition={{ delay: 0.28, duration: 0.6 }}
+              className="text-[8.5px] sm:text-[9px] font-royal font-bold tracking-[0.2em] text-[#6B2516] uppercase drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] mb-3"
             >
               Together With Our Families
             </motion.p>
